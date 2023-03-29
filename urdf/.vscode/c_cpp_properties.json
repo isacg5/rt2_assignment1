@@ -1,0 +1,25 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "${default}",
+        "limitSymbolsToIncludedHeaders": false
+      },
+      "includePath": [
+        "/home/isabel/Desktop/myros/devel/include/**",
+        "/home/isabel/ros_catkin_ws/install_isolated/include/**",
+        "/home/isabel/Desktop/myros/src/assignment2/include/**",
+        "/home/isabel/Desktop/myros/src/my_actions/include/**",
+        "/home/isabel/Desktop/myros/src/my_first_package/include/**",
+        "/home/isabel/Desktop/myros/src/my_srv/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS",
+      "intelliSenseMode": "gcc-x64",
+      "compilerPath": "/usr/bin/gcc",
+      "cStandard": "gnu11",
+      "cppStandard": "c++14"
+    }
+  ],
+  "version": 4
+}

@@ -1,0 +1,83 @@
+\hypertarget{assignment__2__2022__node_8cpp}{}\doxysection{src/assignment\+\_\+2\+\_\+2022\+\_\+node.cpp File Reference}
+\label{assignment__2__2022__node_8cpp}\index{src/assignment\_2\_2022\_node.cpp@{src/assignment\_2\_2022\_node.cpp}}
+
+
+Action client to that controls a cancelled or new goal.  
+
+
+{\ttfamily \#include \char`\"{}ros/ros.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}turtlesim/\+Pose.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}geometry\+\_\+msgs/\+Twist.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}nav\+\_\+msgs/\+Odometry.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$actionlib/client/simple\+\_\+action\+\_\+client.\+h$>$}\newline
+{\ttfamily \#include $<$actionlib/client/terminal\+\_\+state.\+h$>$}\newline
+{\ttfamily \#include $<$assignment\+\_\+2\+\_\+2022/\+Planning\+Action.\+h$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+Include dependency graph for assignment\+\_\+2\+\_\+2022\+\_\+node.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{assignment__2__2022__node_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{assignment__2__2022__node_8cpp_a5f1455404dae801b94064b345e1eafe9}\label{assignment__2__2022__node_8cpp_a5f1455404dae801b94064b345e1eafe9}} 
+void \mbox{\hyperlink{assignment__2__2022__node_8cpp_a5f1455404dae801b94064b345e1eafe9}{get\+\_\+user\+\_\+input}} ()
+\begin{DoxyCompactList}\small\item\em A function that asks the used for a new goal for the robot or to cancel it. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{assignment__2__2022__node_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}\label{assignment__2__2022__node_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}} 
+int {\bfseries main} (int argc, char $\ast$$\ast$argv)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{assignment__2__2022__node_8cpp_ac98a682c469952f22268055151097a77}\label{assignment__2__2022__node_8cpp_ac98a682c469952f22268055151097a77}} 
+int \mbox{\hyperlink{assignment__2__2022__node_8cpp_ac98a682c469952f22268055151097a77}{i\+\_\+x}}
+\begin{DoxyCompactList}\small\item\em x value for the goal desired by the user \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{assignment__2__2022__node_8cpp_a84e414eb5826e1046348335dc13ceab3}\label{assignment__2__2022__node_8cpp_a84e414eb5826e1046348335dc13ceab3}} 
+int \mbox{\hyperlink{assignment__2__2022__node_8cpp_a84e414eb5826e1046348335dc13ceab3}{i\+\_\+y}}
+\begin{DoxyCompactList}\small\item\em y value for the goal desired by the user \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{assignment__2__2022__node_8cpp_a5519bf95583737485567c2508712b185}\label{assignment__2__2022__node_8cpp_a5519bf95583737485567c2508712b185}} 
+int \mbox{\hyperlink{assignment__2__2022__node_8cpp_a5519bf95583737485567c2508712b185}{cancel\+\_\+goal}} = 0
+\begin{DoxyCompactList}\small\item\em value to control if the goal has to be cancelled \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{assignment__2__2022__node_8cpp_ad6e4bead2fde5f653aa204bc7cf98508}\label{assignment__2__2022__node_8cpp_ad6e4bead2fde5f653aa204bc7cf98508}} 
+int \mbox{\hyperlink{assignment__2__2022__node_8cpp_ad6e4bead2fde5f653aa204bc7cf98508}{goal\+\_\+stablished}} = 0
+\begin{DoxyCompactList}\small\item\em value to control if the goal has to be stablished \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Action client to that controls a cancelled or new goal. 
+
+\begin{DoxyAuthor}{Author}
+Isabel Cebollada Gracia 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+27/02/2023
+\end{DoxyDate}
+Subscribes to\+: ~\newline
+ \mbox{[}None\mbox{]}
+
+Publishes to\+: ~\newline
+ \mbox{[}None\mbox{]}
+
+Service clients\+: ~\newline
+ \mbox{[}None\mbox{]}
+
+Service servers\+: ~\newline
+ \mbox{[}None\mbox{]}
+
+Action clients\+: ~\newline
+ /reaching\+\_\+goal
+
+Action servers\+: ~\newline
+ \mbox{[}None\mbox{]}
+
+Description\+:
+
+This node cancels or sends a new goal depending on the user input. 

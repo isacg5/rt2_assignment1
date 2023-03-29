@@ -1,0 +1,93 @@
+\hypertarget{msg__node_8cpp}{}\doxysection{src/msg\+\_\+node.cpp File Reference}
+\label{msg__node_8cpp}\index{src/msg\_node.cpp@{src/msg\_node.cpp}}
+
+
+Message publisher of position and velocities.  
+
+
+{\ttfamily \#include \char`\"{}ros/ros.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}geometry\+\_\+msgs/\+Twist.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}nav\+\_\+msgs/\+Odometry.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}assignment\+\_\+2\+\_\+2022/\+Info.\+h\char`\"{}}\newline
+Include dependency graph for msg\+\_\+node.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{msg__node_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{msg__node_8cpp_ae77e5d68ff0f4892f5154064e8b5e21c}{odom\+Callback}} (const nav\+\_\+msgs\+::\+Odometry\+::\+Const\+Ptr \&msg)
+\begin{DoxyCompactList}\small\item\em A callback that continously get the positions and velocities of the robot. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{msg__node_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}\label{msg__node_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}} 
+int {\bfseries main} (int argc, char $\ast$$\ast$argv)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{msg__node_8cpp_ad0da36b2558901e21e7a30f6c227a45e}\label{msg__node_8cpp_ad0da36b2558901e21e7a30f6c227a45e}} 
+float \mbox{\hyperlink{msg__node_8cpp_ad0da36b2558901e21e7a30f6c227a45e}{x}}
+\begin{DoxyCompactList}\small\item\em x value for the current robot position \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{msg__node_8cpp_aa4f0d3eebc3c443f9be81bf48561a217}\label{msg__node_8cpp_aa4f0d3eebc3c443f9be81bf48561a217}} 
+float \mbox{\hyperlink{msg__node_8cpp_aa4f0d3eebc3c443f9be81bf48561a217}{y}}
+\begin{DoxyCompactList}\small\item\em y value for the current robot position \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{msg__node_8cpp_a4b312b3530217eb51cbad6e930610f6b}\label{msg__node_8cpp_a4b312b3530217eb51cbad6e930610f6b}} 
+float \mbox{\hyperlink{msg__node_8cpp_a4b312b3530217eb51cbad6e930610f6b}{vel\+\_\+x}}
+\begin{DoxyCompactList}\small\item\em x value for the robot velocity \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{msg__node_8cpp_a8da0d8b61b8a35f0da9af571cb2d72ac}\label{msg__node_8cpp_a8da0d8b61b8a35f0da9af571cb2d72ac}} 
+float \mbox{\hyperlink{msg__node_8cpp_a8da0d8b61b8a35f0da9af571cb2d72ac}{vel\+\_\+z}}
+\begin{DoxyCompactList}\small\item\em z value for the robot velocity \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Message publisher of position and velocities. 
+
+\begin{DoxyAuthor}{Author}
+Isabel Cebollada Gracia 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+27/02/2023
+\end{DoxyDate}
+Subscribes to\+: ~\newline
+ /odom
+
+Publishes to\+: ~\newline
+ /robot\+\_\+info
+
+Service clients\+: ~\newline
+ \mbox{[}None\mbox{]}
+
+Service servers\+: ~\newline
+ \mbox{[}None\mbox{]}
+
+Action clients\+: ~\newline
+ \mbox{[}None\mbox{]}
+
+Action server\+: ~\newline
+ \mbox{[}None\mbox{]}
+
+Description\+:
+
+This node publishes the velocity and position values onto the message Info.\+msg. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{msg__node_8cpp_ae77e5d68ff0f4892f5154064e8b5e21c}\label{msg__node_8cpp_ae77e5d68ff0f4892f5154064e8b5e21c}} 
+\index{msg\_node.cpp@{msg\_node.cpp}!odomCallback@{odomCallback}}
+\index{odomCallback@{odomCallback}!msg\_node.cpp@{msg\_node.cpp}}
+\doxysubsubsection{\texorpdfstring{odomCallback()}{odomCallback()}}
+{\footnotesize\ttfamily void odom\+Callback (\begin{DoxyParamCaption}\item[{const nav\+\_\+msgs\+::\+Odometry\+::\+Const\+Ptr \&}]{msg }\end{DoxyParamCaption})}
+
+
+
+A callback that continously get the positions and velocities of the robot. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em msg} & Message from Info.\+msg \\
+\hline
+\end{DoxyParams}

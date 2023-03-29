@@ -1,0 +1,118 @@
+\hypertarget{subs__node_8cpp}{}\doxysection{src/subs\+\_\+node.cpp File Reference}
+\label{subs__node_8cpp}\index{src/subs\_node.cpp@{src/subs\_node.cpp}}
+
+
+Controller for the euclidean distance.  
+
+
+{\ttfamily \#include \char`\"{}ros/ros.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}assignment\+\_\+2\+\_\+2022/\+Info.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$assignment\+\_\+2\+\_\+2022/\+Planning\+Action.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+Include dependency graph for subs\+\_\+node.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{subs__node_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{subs__node_8cpp_a3f2256e5f96592877641f4cad2016698}{goal\+Callback}} (const assignment\+\_\+2\+\_\+2022\+::\+Planning\+Action\+Goal\+::\+Const\+Ptr \&msg)
+\begin{DoxyCompactList}\small\item\em A callback for the goal position. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{subs__node_8cpp_aa844d63e142efffef0bd5574e4dd06ca}{robot\+Info\+Callback}} (const assignment\+\_\+2\+\_\+2022\+::\+Info\+::\+Const\+Ptr \&msg)
+\begin{DoxyCompactList}\small\item\em A callback for the current position of the robot. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{subs__node_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}\label{subs__node_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}} 
+int {\bfseries main} (int argc, char $\ast$$\ast$argv)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{subs__node_8cpp_a61352d6c2c961f328d43807f0010bd99}\label{subs__node_8cpp_a61352d6c2c961f328d43807f0010bd99}} 
+float \mbox{\hyperlink{subs__node_8cpp_a61352d6c2c961f328d43807f0010bd99}{current\+\_\+x}}
+\begin{DoxyCompactList}\small\item\em x value for current robot position \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{subs__node_8cpp_a94b15a394d7a3c430bd7b78954e60eb9}\label{subs__node_8cpp_a94b15a394d7a3c430bd7b78954e60eb9}} 
+float \mbox{\hyperlink{subs__node_8cpp_a94b15a394d7a3c430bd7b78954e60eb9}{current\+\_\+y}}
+\begin{DoxyCompactList}\small\item\em y value for current robot position \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{subs__node_8cpp_ac0df33c619e3c146b6f892ec65219336}\label{subs__node_8cpp_ac0df33c619e3c146b6f892ec65219336}} 
+float \mbox{\hyperlink{subs__node_8cpp_ac0df33c619e3c146b6f892ec65219336}{goal\+\_\+x}}
+\begin{DoxyCompactList}\small\item\em x value for goal robot position \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{subs__node_8cpp_a86a424410ae6b4f43baca838da5f993b}\label{subs__node_8cpp_a86a424410ae6b4f43baca838da5f993b}} 
+float \mbox{\hyperlink{subs__node_8cpp_a86a424410ae6b4f43baca838da5f993b}{goal\+\_\+y}}
+\begin{DoxyCompactList}\small\item\em y value for goal robot position \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{subs__node_8cpp_ad6745b0a809b66adb91654bff75ef006}\label{subs__node_8cpp_ad6745b0a809b66adb91654bff75ef006}} 
+float \mbox{\hyperlink{subs__node_8cpp_ad6745b0a809b66adb91654bff75ef006}{euclidean\+\_\+distance}}
+\begin{DoxyCompactList}\small\item\em value for euclidean distance \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Controller for the euclidean distance. 
+
+\begin{DoxyAuthor}{Author}
+Isabel Cebollada Gracia 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+27/02/2023
+\end{DoxyDate}
+
+\begin{DoxyParams}{Parameters}
+{\em frequency} & defines the frequency the node will execute.\\
+\hline
+\end{DoxyParams}
+Subscribes to\+: ~\newline
+ /robot\+\_\+info /reaching\+\_\+goal/goal
+
+Publishes to\+: ~\newline
+ \mbox{[}None\mbox{]}
+
+Service clients\+: ~\newline
+ \mbox{[}None\mbox{]}
+
+Service servers\+: ~\newline
+ \mbox{[}None\mbox{]}
+
+Action clients\+: ~\newline
+ \mbox{[}None\mbox{]}
+
+Action server\+: ~\newline
+ \mbox{[}None\mbox{]}
+
+Description\+:
+
+This node calculates the euclidean distance from the robot position to the goal position and prints it onto the terminal. It executes with a frequency defined by the parameter \char`\"{}frequency\char`\"{}. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{subs__node_8cpp_a3f2256e5f96592877641f4cad2016698}\label{subs__node_8cpp_a3f2256e5f96592877641f4cad2016698}} 
+\index{subs\_node.cpp@{subs\_node.cpp}!goalCallback@{goalCallback}}
+\index{goalCallback@{goalCallback}!subs\_node.cpp@{subs\_node.cpp}}
+\doxysubsubsection{\texorpdfstring{goalCallback()}{goalCallback()}}
+{\footnotesize\ttfamily void goal\+Callback (\begin{DoxyParamCaption}\item[{const assignment\+\_\+2\+\_\+2022\+::\+Planning\+Action\+Goal\+::\+Const\+Ptr \&}]{msg }\end{DoxyParamCaption})}
+
+
+
+A callback for the goal position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em msg} & defines the position of the goal \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{subs__node_8cpp_aa844d63e142efffef0bd5574e4dd06ca}\label{subs__node_8cpp_aa844d63e142efffef0bd5574e4dd06ca}} 
+\index{subs\_node.cpp@{subs\_node.cpp}!robotInfoCallback@{robotInfoCallback}}
+\index{robotInfoCallback@{robotInfoCallback}!subs\_node.cpp@{subs\_node.cpp}}
+\doxysubsubsection{\texorpdfstring{robotInfoCallback()}{robotInfoCallback()}}
+{\footnotesize\ttfamily void robot\+Info\+Callback (\begin{DoxyParamCaption}\item[{const assignment\+\_\+2\+\_\+2022\+::\+Info\+::\+Const\+Ptr \&}]{msg }\end{DoxyParamCaption})}
+
+
+
+A callback for the current position of the robot. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em msg} & defines the current position of the robot \\
+\hline
+\end{DoxyParams}

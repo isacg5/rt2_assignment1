@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<launch>
+    <include file="$(find rt2_assignment1)/launch/sim_w1.launch" />
+    <param name="des_pos_x" value= "0.0" />
+    <param name="des_pos_y" value= "1.0" />
+    <node pkg="rt2_assignment1" type="wall_follow_service.py" name="wall_follower" />
+    <node pkg="rt2_assignment1" type="go_to_point_service.py" name="go_to_point"  />
+    <node pkg="rt2_assignment1" type="bug_as.py" name="bug_action_service" output="screen" />
+
+    <node pkg="rt2_assignment1" type="srv_client_node" name="srv_client_node" output="screen" />
+    <node pkg="rt2_assignment1" type="srv_server_node" name="srv_server_node" output="screen" />
+    <node pkg="rt2_assignment1" type="msg_node" name="msg_node" output="screen"/>
+    <!-- The action node is launched in other terminal to be able to introduce the values -->
+    <node pkg="rt2_assignment1" type="assignment_2_2022_node.py" name="assignment_2_2022_node" output="screen" launch-prefix="gnome-terminal --command"/>
+    <node pkg="rt2_assignment1" type="subs_node" name="subs_node" output="screen"/>
+
+    <!-- The vel is introduced as a parameter -->
+    <arg name="vel_pub"/>
+    <param name="vel_publishing" value= "$(arg vel_pub)" /> 
+    
+</launch>

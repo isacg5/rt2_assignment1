@@ -1,0 +1,55 @@
+This is the second assignment of Research Track course, based on simple implementations using ROS.\hypertarget{md__r_e_a_d_m_e_autotoc_md0}{}\doxysection{Installing and running}\label{md__r_e_a_d_m_e_autotoc_md0}
+\href{http://wiki.ros.org/ROS/Installation}{\texttt{ ROS}} must be installed in your computer.
+
+How to run it
+
+After include the repository in your workspace and do catkin\+\_\+make
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\$ roslaunch assignment\_2\_2022 assignment2.launch vel\_pub:=x}
+
+\end{DoxyCode}
+ Where x is the frequency rate that the third node will execute.\hypertarget{md__r_e_a_d_m_e_autotoc_md1}{}\doxysection{Functions in the code}\label{md__r_e_a_d_m_e_autotoc_md1}
+To have a better approach to the knowledge of how the code works, the different folders that appear in the repository are deeply explained here.
+\begin{DoxyItemize}
+\item action folder\+: Includes the file to create the custom action.
+\item msg folder\+: Includes the file to create the custom message.
+\item srv folder\+: Includes the file to create the custom service.
+\item config, scripts, template, urdf and world are folders that let create th environment.
+\item launch folder\+: Contains the launcher that let the user launch all the nodes with one command.
+\item src folder\+: Includes all the nodes created to reach the goal of the assigment. Are explained here below\+:
+\begin{DoxyItemize}
+\item msg\+\_\+node\+: Is a node that is part from the first requirement. This node is subscribing to odom to get the position x and y and linear and angular velocities and publishing this information in the customized message through the topic /robot\+\_\+info.
+\item assigment\+\_\+2\+\_\+2022\+\_\+node\+: Is the other part from the first requirement. Through the user input, gets the goal position of the robot or the to cancel the goal, and through the action created /reaching\+\_\+goal, updates the action.
+\item srv\+\_\+server\+\_\+node\+: Is part of the second requirement og the assignment. By subscribing to the action created in the first requirement, implements a counter with the goals reached or cancelled, and updates the service with this values.
+\item srv\+\_\+client\+\_\+node\+: Is the other part of the second requirement. By simply calling the service gets and print the amount of goals reached and cancelled.
+\item subs\+\_\+node\+: The third part of the assigment is composed by this node. It is subscribing to the topic /robot\+\_\+info created with the custom message to access to the robot information and subscribing as well to the action created to get the coordinated of the goal. With these values is calculating the euclidean distance that the robot miss until reach the goal. This node also has a paramenter that the user has to introduce when launching the assigment called vel\+\_\+pub that corresponds to the execution frequency of this node.
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md2}{}\doxysection{Flowchart}\label{md__r_e_a_d_m_e_autotoc_md2}
+Flowchart is a diagram that shows each step of the progress of a program in a sequential order. In this case, the flowchart present is the one of the first part of the assigment. The one at the left corresponds to msg\+\_\+node and the one at the right to assigmnet\+\_\+2\+\_\+2022\+\_\+node.
+
+  \hypertarget{md__r_e_a_d_m_e_autotoc_md3}{}\doxysection{Pseudocode of msg\+\_\+node}\label{md__r_e_a_d_m_e_autotoc_md3}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{ \{c++\}}
+\DoxyCodeLine{Create subscriber to /odom}
+\DoxyCodeLine{Create published to /robot\_info (custom message)}
+\DoxyCodeLine{while()}
+\DoxyCodeLine{  publish\_new\_vels()}
+\DoxyCodeLine{  }
+\DoxyCodeLine{Notice that the callback subcriber is getting continuosly the information from /odom. }
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md4}{}\doxysection{Pseudocode of assigment\+\_\+2\+\_\+2022}\label{md__r_e_a_d_m_e_autotoc_md4}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{ \{c++\}}
+\DoxyCodeLine{Create action client /reaching\_goal}
+\DoxyCodeLine{Wait for server}
+\DoxyCodeLine{while()}
+\DoxyCodeLine{  GUI getting a new goal or to cancell a goal}
+\DoxyCodeLine{  Send goal or cancel it}
+
+\end{DoxyCode}
+ 

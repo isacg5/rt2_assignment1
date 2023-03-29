@@ -1,0 +1,105 @@
+\hypertarget{srv__server__node_8cpp}{}\doxysection{src/srv\+\_\+server\+\_\+node.cpp File Reference}
+\label{srv__server__node_8cpp}\index{src/srv\_server\_node.cpp@{src/srv\_server\_node.cpp}}
+
+
+Server service for goals.  
+
+
+{\ttfamily \#include \char`\"{}ros/ros.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}assignment\+\_\+2\+\_\+2022/\+Goals.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$assignment\+\_\+2\+\_\+2022/\+Planning\+Action.\+h$>$}\newline
+Include dependency graph for srv\+\_\+server\+\_\+node.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{srv__server__node_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{srv__server__node_8cpp_a1db7b9c7729d3d4d3513bd8775259025}{subs\+Callback}} (const assignment\+\_\+2\+\_\+2022\+::\+Planning\+Action\+Result\+::\+Const\+Ptr \&msg)
+\begin{DoxyCompactList}\small\item\em A callback that updates the counter of the goals reached and cancelled. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{srv__server__node_8cpp_a958b32acc5725bcf0e620af74697c167}{goals\+Callback}} (assignment\+\_\+2\+\_\+2022\+::\+Goals\+::\+Request \&req, assignment\+\_\+2\+\_\+2022\+::\+Goals\+::\+Response \&res)
+\begin{DoxyCompactList}\small\item\em A callback that updates the service server with new values of goals cancelled and reached. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{srv__server__node_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}\label{srv__server__node_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}} 
+int {\bfseries main} (int argc, char $\ast$$\ast$argv)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{srv__server__node_8cpp_a96fa234c31b8cb72c82f160ffe5d6d9c}\label{srv__server__node_8cpp_a96fa234c31b8cb72c82f160ffe5d6d9c}} 
+int \mbox{\hyperlink{srv__server__node_8cpp_a96fa234c31b8cb72c82f160ffe5d6d9c}{counter\+\_\+reached}}
+\begin{DoxyCompactList}\small\item\em counter for the goals tht have been reached \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{srv__server__node_8cpp_a653d1599a4bc71a81c808328d370b941}\label{srv__server__node_8cpp_a653d1599a4bc71a81c808328d370b941}} 
+int \mbox{\hyperlink{srv__server__node_8cpp_a653d1599a4bc71a81c808328d370b941}{counter\+\_\+cancelled}}
+\begin{DoxyCompactList}\small\item\em counter for the goals tht have been cancelled \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Server service for goals. 
+
+\begin{DoxyAuthor}{Author}
+Isabel Cebollada Gracia 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+27/02/2023
+\end{DoxyDate}
+Subscribes to\+: ~\newline
+ /reaching\+\_\+goal/result
+
+Publishes to\+: ~\newline
+ \mbox{[}None\mbox{]}
+
+Service clients\+: ~\newline
+ \mbox{[}None\mbox{]}
+
+Service servers\+: ~\newline
+ /goals
+
+Action clients\+: ~\newline
+ \mbox{[}None\mbox{]}
+
+Action server\+: ~\newline
+ \mbox{[}None\mbox{]}
+
+Description\+:
+
+This node updates the counter of goals completed and cancelled. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{srv__server__node_8cpp_a958b32acc5725bcf0e620af74697c167}\label{srv__server__node_8cpp_a958b32acc5725bcf0e620af74697c167}} 
+\index{srv\_server\_node.cpp@{srv\_server\_node.cpp}!goalsCallback@{goalsCallback}}
+\index{goalsCallback@{goalsCallback}!srv\_server\_node.cpp@{srv\_server\_node.cpp}}
+\doxysubsubsection{\texorpdfstring{goalsCallback()}{goalsCallback()}}
+{\footnotesize\ttfamily bool goals\+Callback (\begin{DoxyParamCaption}\item[{assignment\+\_\+2\+\_\+2022\+::\+Goals\+::\+Request \&}]{req,  }\item[{assignment\+\_\+2\+\_\+2022\+::\+Goals\+::\+Response \&}]{res }\end{DoxyParamCaption})}
+
+
+
+A callback that updates the service server with new values of goals cancelled and reached. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em req} & requests values of the service server \\
+\hline
+{\em res} & response values of the service server \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{srv__server__node_8cpp_a1db7b9c7729d3d4d3513bd8775259025}\label{srv__server__node_8cpp_a1db7b9c7729d3d4d3513bd8775259025}} 
+\index{srv\_server\_node.cpp@{srv\_server\_node.cpp}!subsCallback@{subsCallback}}
+\index{subsCallback@{subsCallback}!srv\_server\_node.cpp@{srv\_server\_node.cpp}}
+\doxysubsubsection{\texorpdfstring{subsCallback()}{subsCallback()}}
+{\footnotesize\ttfamily void subs\+Callback (\begin{DoxyParamCaption}\item[{const assignment\+\_\+2\+\_\+2022\+::\+Planning\+Action\+Result\+::\+Const\+Ptr \&}]{msg }\end{DoxyParamCaption})}
+
+
+
+A callback that updates the counter of the goals reached and cancelled. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em msg} & Message of Planning.\+action that contains the information of the goals \\
+\hline
+\end{DoxyParams}
